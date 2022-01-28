@@ -17,3 +17,7 @@ regions:
   content: Content
   footer: Footer
   page_bottom: 'Page bottom'
+
+components:
+  namespaces:
+    decanter: dist/templates/decanter
