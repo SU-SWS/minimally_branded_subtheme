@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Preprocess functions for Stanford Starter.
+ * Preprocess functions for Minimally Branded Subtheme.
  */
 
 /**
@@ -18,4 +18,14 @@ function minimally_branded_subtheme_theme_suggestions_block_alter(array &$sugges
   if (!empty($variables['elements']['#id']) && $variables['elements']['#id'] == 'minimally_branded_subtheme_search') {
     $suggestions[] = 'block__stanford_basic_search';
   }
+}
+
+/**
+ * @param $variables
+ */
+function minimally_branded_subtheme_preprocess_page(&$variables) {
+
+    $lockup_options = 'my_variable custom text';
+    $variables['lockup_options'] = 'hello' ;
+
 }

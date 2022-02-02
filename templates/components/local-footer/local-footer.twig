@@ -57,15 +57,57 @@
  * - weblogin_text:       The text to display for the weblogin button link.
  */
 #}
-{%- set template_path_lockup = "@minimally_branded_subtheme/components/lockup/lockup.html.twig" -%}
+{%- if template_path_lockup is empty -%}
+  {%- set template_path_lockup = "@decanter/components/lockup/lockup.twig" -%}
+{%- endif %}
 
-{%- set template_path_macro = "@minimally_branded_subtheme/utilities/macros/link-list.twig" -%}
+{%- if lockup_options is empty -%}
+ {%- set lockup_options = { "modifier_class": 'su-lockup--option-a', "line1": lockup_title, "attributes": attributes|without('id') } -%}
+{%- endif -%}
 
-{%- set template_path_signup_form = "@minimally_branded_subtheme/components/signup-form/signup-form.html.twig" -%}
+{%- if template_path_link is empty -%}
+  {%- set template_path_link = "@decanter/components/link/link.twig" -%}
+{%- endif %}
 
-{%- import template_path_macro as list_macro_2 -%}
+{%- if template_path_signup_form is empty -%}
+  {%- set template_path_signup_form = "@decanter/components/signup-form/signup-form.twig" %}
+{%- endif %}
 
-{% block contentcell1 %}
+{%- if template_path_macro is empty -%}
+  {%- set template_path_macro = "@decanter/utilities/macros/link-list.twig" -%}
+{%- endif -%}
+{%- import template_path_macro as list_macro -%}
+
+<div {{ attributes }} class="su-local-footer {{ modifier_class }}">
+  {# The header is completely optional and won't render if there isn't any content #}
+  {% if lockup_title is not empty or weblogin_url is not empty or headercontent is not empty %}
+  <div class="su-local-footer__header">
+    {# Lockup template. Set usually to option-a #}
+    {% block block_lockup %}
+      {% include template_path_lockup with lockup_options %}
+    {% endblock %}
+    {# Web login button #}
+    {% if weblogin_url is not empty %}
+      {% include template_path_link with {
+        "modifier_class": "su-link--internal",
+        "link_href": weblogin_url,
+        "link_content": weblogin_text|default('Web Login')
+      } only %}
+    {% endif %}
+    {# Optional content area for the header. #}
+    {{ headercontent }}
+  </div>
+  {% endif %}
+  {#
+    Container for the content cells. These cells have a specific and rigid
+    responsive behaviour so they are not optional. Empty cells will still
+    render and create whitespace.
+  #}
+  <div class="su-local-footer__columns">
+    {# Content Cell 1 - For action and social media links. #}
+    <div class="su-local-footer__cell1">
+      {# Twig block for you to extend with #}
+      {% block contentcell1 %}
       {#
         The address is optional so don't put non-address content in it.
         Use the `cell1` variable instead.
@@ -78,19 +120,31 @@
       {% endif %}
       {# Stylized links. See local-footer.json for structure for macro. #}
       {% if action_links is not empty%}
-      <div class="su-local-footer__action-links">
-        {{ action_links }}
-      </div>
+      <ul class="su-local-footer__action-links">
+        {% if action_links is iterable %}
+          {{ list_macro.link_list(action_links) }}
+        {% else %}
+          {{ action_links }}
+        {% endif %}
+      </ul>
       {% endif %}
-
       {# Stylized links. See local-footer.json for structure for macro. #}
       {% if social_links is not empty%}
-      <div class="su-local-footer__social-links">
-        {{ social_links }}
-      </div>
+      <ul class="su-local-footer__social-links">
+        {% if social_links is iterable %}
+          {{ list_macro.link_list(social_links) }}
+        {% else %}
+          {{ social_links }}
+        {% endif %}
+      </ul>
       {% endif %}
       {% endblock %}
-
+      {# Use this var if you would like to place your own content in to this cell. #}
+      {{ cell1 }}
+    </div>
+    {# Content Cell 2 - For primary and secondary link lists. #}
+    <div class="su-local-footer__cell2">
+      {# Twig block for you to extend with #}
       {% block contentcell2 %}
       {#
         Primary Links - left or top list.
@@ -100,12 +154,14 @@
         {% if primary_links_header is not empty %}
         <h2 class="su-local-footer__list-heading">{{ primary_links_header|default("Primary Links") }}</h2>
         {% endif %}
-        <div class="su-local-footer__primary-links">
+        <ul class="su-local-footer__primary-links">
           {# Stylized links. See local-footer.json for structure for macro. #}
           {% if primary_links is iterable %}
+            {{ list_macro.link_list(primary_links) }}
+          {% else %}
             {{ primary_links }}
           {% endif %}
-        </div>
+        </ul>
       </nav>
       {% endif %}
       {#
@@ -116,15 +172,39 @@
         {% if secondary_links_header is not empty %}
         <h2 class="su-local-footer__list-heading">{{ secondary_links_header|default("Secondary Links") }}</h2>
         {% endif %}
-        <div class="su-local-footer__secondary-links">
+        <ul class="su-local-footer__secondary-links">
           {# Stylized links. See local-footer.json for structure for macro. #}
           {% if secondary_links is iterable %}
+            {{ list_macro.link_list(secondary_links) }}
+          {% else %}
             {{ secondary_links }}
           {% endif %}
-        </div>
+        </ul>
       </nav>
       {% endif %}
       {% endblock %}
-
-{% extends "@minimally_branded_subtheme/components/local-footer/local-footer.twig" %}
-
+      {# If you want to provide all of our own markup use the cell2 var. #}
+      {{ cell2 }}
+    </div>
+    {#
+      Cell 3 - For the signup form.
+    #}
+    <div class="su-local-footer__cell3">
+      {# Twig block for you to extend with #}
+      {% block contentcell3 %}
+      {#
+        The signup form is optional. If it doesn't meet your content needs
+        use the cell3 variable instead.
+      #}
+      {% if signup_form_action["su_local_foot_f_url"][0]["#url"] is not empty %}
+        {# The template path is included with the `with` keyword on purpose.
+           See the template for what variables are expected and how they are named.
+        #}
+        {% include template_path_signup_form with { "attributes" : attributes|without('id') } %}
+      {% endif %}
+      {% endblock %}
+      {# If you want to provide all of our own markup use the cell3 var. #}
+      {{ cell3 }}
+    </div>
+  </div>
+</div>
