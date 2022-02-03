@@ -70,7 +70,7 @@
 {%- endif %}
 
 {%- if template_path_signup_form is empty -%}
-  {%- set template_path_signup_form = "@decanter/components/signup-form/signup-form.twig" -%}
+  {%- set template_path_signup_form = "@decanter/components/signup-form/signup-form.twig" %}
 {%- endif %}
 
 {%- if template_path_macro is empty -%}
@@ -196,7 +196,7 @@
         The signup form is optional. If it doesn't meet your content needs
         use the cell3 variable instead.
       #}
-      {% if signup_form_action is not empty %}
+      {% if signup_form_action["su_local_foot_f_url"][0]["#url"] is not empty %}
         {# The template path is included with the `with` keyword on purpose.
            See the template for what variables are expected and how they are named.
         #}

@@ -20,10 +20,13 @@
  * - signup_form_field_submit_value: A custom submit value for the submit button.
  */
 #}
+{% set signup_form_action_url = signup_form_action["su_local_foot_f_url"][0]["#url"] %}
+
 <div {{ attributes }} class="su-signup-form {{ modifier_class }}">
   {# Add any additional markup above the form with this variable. #}
   {{ signup_form_content }}
-  <form {{ form_attributes }} action="{{ signup_form_action|default("/") }}" method="{{ signup_form_method|default('post') }}">
+  <h2>This is the spot</h2>
+  <form {{ form_attributes }} action="{{ signup_form_action_url }}" method="{{ signup_form_method|default('post') }}">
     <input type="email" id="{{ signup_form_field_email_id|default('signup-email') }}" aria-label="{{ signup_form_field_email_aria_label|default('email address') }}" name="{{ signup_form_field_email_name|default('signup_email') }}" placeholder="{{ signup_form_field_email_placeholder|default('email address') }}" {{ signup_form_field_email_required|default('required') }} />
     {# Add any additional fields or markup to this form using this variable. #}
     {{ signup_form_fields }}
