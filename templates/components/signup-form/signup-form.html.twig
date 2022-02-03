@@ -25,7 +25,6 @@
 <div {{ attributes }} class="su-signup-form {{ modifier_class }}">
   {# Add any additional markup above the form with this variable. #}
   {{ signup_form_content }}
-  <h2>This is the spot</h2>
   <form {{ form_attributes }} action="{{ signup_form_action_url }}" method="{{ signup_form_method|default('post') }}">
     <input type="email" id="{{ signup_form_field_email_id|default('signup-email') }}" aria-label="{{ signup_form_field_email_aria_label|default('email address') }}" name="{{ signup_form_field_email_name|default('signup_email') }}" placeholder="{{ signup_form_field_email_placeholder|default('email address') }}" {{ signup_form_field_email_required|default('required') }} />
     {# Add any additional fields or markup to this form using this variable. #}
