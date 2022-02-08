@@ -19,3 +19,13 @@ function minimally_branded_subtheme_theme_suggestions_block_alter(array &$sugges
     $suggestions[] = 'block__stanford_basic_search';
   }
 }
+
+/**
+ * @param $variables
+ */
+function minimally_branded_subtheme_preprocess_page(&$variables) {
+
+    $lockup_options = 'my_variable custom text';
+    $variables['lockup_options'] = 'hello' ;
+
+}
