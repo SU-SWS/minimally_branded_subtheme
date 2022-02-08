@@ -11,7 +11,12 @@ export default {
 
   // Attach Drupal Behavior.
   attach (context, settings) {
-    // console.log("Attached.");
+    console.log("Attached.");
+    (function ($) {
+      $('.su-lockup__wordmark').remove();
+  
+  
+    })(jQuery);
   },
 
   // Detach Example.

@@ -49,7 +49,7 @@ var webpackConfig = {
   // What build?
   entry: {
     "minimally_branded_subtheme":  path.resolve(srcSass, "config/index.scss"),
-    "scripts":       path.resolve(srcJS,   "scripts.js"),
+    "scripts":       path.resolve(srcJS, "minimally_branded_subtheme.behaviors.js"),
   },
   // Where put build?
   output: {
