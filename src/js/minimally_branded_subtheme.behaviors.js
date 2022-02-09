@@ -11,11 +11,10 @@ export default {
 
   // Attach Drupal Behavior.
   attach (context, settings) {
-    console.log("Attached.");
+    // console.log("Attached.");
     (function ($) {
+      $('.su-lockup__wordmark').parents('.su-lockup__cell1').addClass('empty-logo');
       $('.su-lockup__wordmark').remove();
-  
-  
     })(jQuery);
   },
 
