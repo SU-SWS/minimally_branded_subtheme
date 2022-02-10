@@ -4,13 +4,12 @@
 // Teasers & Lists
 
 // Events default and cards
-.su-event-card{
-  &.su-card{ 
+.su-event-card {
+  &.su-card {
     .su-event-list-item__details {
       .event-list-item__type {
         a {
           color: $su-color-digital-blue;
-          // display: inline-block; need this?
         }
       }
     }
@@ -24,7 +23,6 @@
           &:focus,
           &:active {
             color: $su-color-digital-blue;
-            // display: inline-block; need this?
           }
         }
       }
@@ -33,62 +31,115 @@
 
 }
 
+.su-event-list-item {
+  .su-event-list-item__details {
+    h2 {
+      >a.su-link--external {
+        &:after {
+          background-color: $su-color-digital-blue;
+          display: inline-block;
+        }
+      }
+    }
 
-.su-event-list-item .su-event-list-item__details h2>a.su-link--external:after {
-  background-color: $su-color-digital-blue;
-  display: inline-block;
+    .event-list-item__type {
+      a {
+        &:hover,
+        &:active,
+        &:focus {
+          color: $su-color-digital-blue;
+        }
+      }
+    }
+  }
 }
 
-.su-event-list-item .su-event-list-item__details .event-list-item__type a:hover {
-  color: $su-color-digital-blue;
-}
+.su-event-list-item {
+  .su-event-list-item__details {
+    h2 {
+      > a {
+        color: $su-color-digital-blue;
 
-.su-event-list-item .su-event-list-item__details h2>a {
-  color: $su-color-digital-blue;
+        &:hover,
+        &:active,
+        &:focus {
+          color: $su-color-digital-blue;
+        }
+      }
+    }
+  }
 }
-
-.ds-entity--stanford-event-series .su-card a:hover {
-  color: $su-color-digital-blue;
-}
-
 
 // News Default and Card
-.su-news-list a {
-  &:hover {
-    color: $su-color-digital-blue;
+.su-news-list {
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $su-color-digital-blue;
+
+      h2 {
+        color: $su-color-digital-blue;
+      }
+    }
+
     h2 {
       color: $su-color-digital-blue;
     }
-  }
-
-  h2 {
-    color: $su-color-digital-blue;
   }
 }
 
 .su-news-edit-article {
   a {
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       color: $su-color-black;
     }
   }
 }
 
-.su-news-list .su-news-list__topics li a {
-  color: $su-color-digital-blue;
+.su-news-list {
+  .su-news-list__topics {
+    li {
+      a {
+        color: $su-color-digital-blue;
+      }
+    }
+  }
+
+  .su-link--external {
+    &:after {
+      background-color: $su-color-digital-blue;
+    }
+  }
 }
 
-.su-news-list .su-link--external:after,
-.su-news-vertical-teaser.su-card .su-link:after {
-  background-color: $su-color-digital-blue;
-}
+.su-news-vertical-teaser {
+  &.su-card {
 
-.su-news-vertical-teaser.su-card .su-news-vertical-teaser__link:hover h2 {
-  color: $su-color-digital-blue;
-}
+    .su-link {
+      &:after {
+        background-color: $su-color-digital-blue;
+      }
+    }
 
-.su-news-vertical-teaser.su-card .su-card__contents .news-vertical-teaser__topics a {
-  color: $su-color-digital-blue;
+    .su-card__contents {
+      .news-vertical-teaser__topics {
+        a {
+          color: $su-color-digital-blue;
+        }
+      }
+    }
+
+    .su-news-vertical-teaser__link {
+      &:hover {
+        h2 {
+          color: $su-color-digital-blue;
+        }
+      }
+    }
+  }
 }
 
 // People Default Grid
@@ -101,21 +152,76 @@
 }
 
 // Publications
-.stanford-publications.view a {
-  color: $su-color-digital-blue;
-}
+.stanford-publications {
+  &.view {
+    a {
+      color: $su-color-digital-blue;
 
-.stanford-publications.view a:active:after, 
-.stanford-publications.view a:after, 
-.stanford-publications.view a:focus:after, 
-.stanford-publications.view a:hover:after {
-  background-color: $su-color-digital-blue;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $su-color-digital-blue;
+    
+        &:after {
+          background-color: $su-color-digital-blue;
+        }
+      }
+   
+      &:after {
+        background-color: $su-color-digital-blue;
+      }
+    }
+  }
 }
 
 .stanford-publications {
   .views-field-edit-node {
     a {
       color: $su-color-bright-red;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $su-color-black;
+      }
+    }
+  }
+}
+
+.ptype-stanford-entity {
+  .ds-entity--stanford-publication {
+    .su-card__contents {
+      > h2 {
+        a {
+          color: $su-color-digital-blue;
+
+          &:after {
+            background-color: $su-color-digital-blue;
+          }
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: $su-color-digital-blue;
+
+            &:after {
+              background-color: $su-color-digital-blue;
+            }
+          }
+        }
+      }
+
+      .su-publication-topics {
+        a {
+          color: $su-color-digital-blue;
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: $su-color-digital-blue;
+          }
+        }
+      }
     }
   }
 }
