@@ -30,14 +30,14 @@
       >.su-multi-menu__item--parent {
         >.su-nav-toggle {
           &::before {
-            background: transparent url("../../assets/svg/caret-down-digital-blue.svg") no-repeat center / 50%;
+            background: transparent url('../../assets/svg/caret-down-digital-blue.svg') no-repeat center / 50%;
 
           }
 
           &:focus,
           &:hover {
             &::before {
-              background: transparent url("../../assets/svg/caret-up-digital-blue.svg") no-repeat center / 50%;
+              background: transparent url('../../assets/svg/caret-up-digital-blue.svg') no-repeat center / 50%;
             }
           }
         }
