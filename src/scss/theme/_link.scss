@@ -19,10 +19,13 @@
     .su-event-list-item__details {
       h2 {
         > a {
+          color: $su-color-digital-blue;
+
           &:hover,
           &:focus,
           &:active {
-            color: $su-color-digital-blue;
+            color: $su-color-black;
+            text-decoration: underline;
           }
         }
       }
@@ -34,7 +37,15 @@
 .su-event-list-item {
   .su-event-list-item__details {
     h2 {
-      >a.su-link--external {
+      > a {
+        &:hover,
+        &:active,
+        &:focus {
+          color: $su-color-black;
+          text-decoration: underline;
+        }
+      }
+      > a.su-link--external {
         &:after {
           background-color: $su-color-digital-blue;
           display: inline-block;
@@ -64,6 +75,7 @@
         &:active,
         &:focus {
           color: $su-color-digital-blue;
+
         }
       }
     }
@@ -76,10 +88,8 @@
     &:hover,
     &:active,
     &:focus {
-      color: $su-color-digital-blue;
-
       h2 {
-        color: $su-color-digital-blue;
+        color: $su-color-black;
       }
     }
 
@@ -104,6 +114,12 @@
     li {
       a {
         color: $su-color-digital-blue;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: $su-color-black;
+        }
       }
     }
   }
@@ -160,7 +176,6 @@
       &:hover,
       &:active,
       &:focus {
-        color: $su-color-digital-blue;
     
         &:after {
           background-color: $su-color-digital-blue;
@@ -202,7 +217,7 @@
           &:hover,
           &:active,
           &:focus {
-            color: $su-color-digital-blue;
+            color: $su-color-black;
 
             &:after {
               background-color: $su-color-digital-blue;
@@ -218,7 +233,7 @@
           &:hover,
           &:active,
           &:focus {
-            color: $su-color-digital-blue;
+            color: $su-color-black;
           }
         }
       }
@@ -248,4 +263,17 @@
     }
   }
 } 
+
+.su-basic-page-types-list {
+  a {
+    color: $su-color-digital-blue;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $su-color-black;
+      text-decoration: underline;
+    }
+  }
+}
 
