@@ -19,12 +19,12 @@
     .su-event-list-item__details {
       h2 {
         > a {
-          color: $su-color-digital-blue;
+          color: $su-color-black;
 
           &:hover,
           &:focus,
           &:active {
-            color: $su-color-black;
+            color: $su-color-digital-blue;
             text-decoration: underline;
           }
         }
@@ -79,12 +79,12 @@
 .ds-entity--stanford-event-series {
   .su-card {
     a {
-      color: $su-color-digital-blue;
+      color: $su-color-black;
 
       &:hover,
       &:active,
       &:focus {
-        color: $su-color-black;
+        color: $su-color-digital-blue;
       }
     }
   }
@@ -222,8 +222,6 @@
     .su-card__contents {
       > h2 {
         a {
-          color: $su-color-digital-blue;
-
           &:after {
             background-color: $su-color-digital-blue;
           }
@@ -231,7 +229,7 @@
           &:hover,
           &:active,
           &:focus {
-            color: $su-color-black;
+            color: $su-color-digital-blue;
 
             &:after {
               background-color: $su-color-digital-blue;
