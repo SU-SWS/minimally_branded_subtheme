@@ -65,18 +65,26 @@
   }
 }
 
+// for the event list pages 
 .su-event-list-item {
   .su-event-list-item__details {
     h2 {
       > a {
         color: $su-color-digital-blue;
+      }
+    }
+  }
+}
 
-        &:hover,
-        &:active,
-        &:focus {
-          color: $su-color-digital-blue;
+.ds-entity--stanford-event-series {
+  .su-card {
+    a {
+      color: $su-color-digital-blue;
 
-        }
+      &:hover,
+      &:active,
+      &:focus {
+        color: $su-color-black;
       }
     }
   }
@@ -144,6 +152,12 @@
       .news-vertical-teaser__topics {
         a {
           color: $su-color-digital-blue;
+
+          &:hover,
+          &:active,
+          &:focus {
+            color: $su-color-black;
+          }
         }
       }
     }
