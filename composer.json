@@ -4,6 +4,6 @@
   "type": "drupal-custom-theme",
   "homepage": "https://github.com/SU-SWS/minimally_branded_subtheme",
   "authors": [],
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "minimum-stability": "dev"
 }
