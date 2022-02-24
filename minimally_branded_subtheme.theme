@@ -20,3 +20,11 @@ function minimally_branded_subtheme_theme_suggestions_block_alter(array &$sugges
     $suggestions[] = 'block__stanford_basic_search';
   }
 }
+
+/**
+*/
+function minimally_branded_subtheme_preprocess_block__minimally_branded_subtheme_branding(&$variables) {
+    $VARIABLE_NAME = 'want the field value here';
+    $variables['content']['lockup'] = $VARIABLE_NAME ;
+}
+ 

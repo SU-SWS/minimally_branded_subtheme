@@ -28,8 +28,8 @@
 {% endif %}
 
 {# The variant classes change when there is more than one line to render. #}
-{% if lockup.option is not empty %}
-  {% set modifier_class = "su-lockup--option-" ~ lockup.option %}
+{% if content.lockup["#option"] is not empty %}
+  {% set modifier_class = "su-lockup--option-" ~ content.lockup["#option"] %}
 {% endif %}
 
 {# Do not default the line 1 on variant O, S, or T #}
@@ -69,7 +69,7 @@
     </div>
   {% else %}
     <div class="su-lockup__wordmark-wrapper">
-      <span class="su-lockup__wordmark">Stanford</span>
+      <span class="su-lockup__wordmark"></span>
       {% if line4 is not empty %}
         <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
       {% endif %}
@@ -94,15 +94,11 @@
       {% if line3 is not empty %}
       <span class="su-lockup__line3" {{ region_attributes.line3 }}>{{ line3 }}</span>
       {% endif %}
-    {{ kint() }}
+    {{ kint( content.lockup) }}
+    {{kint(my_variable)}}
     </div>
     {% endif %}
   {% endif %}
 {% endblock %}
 
 {% extends "@minimally_branded_subtheme/components/lockup/lockup.html.twig" %}
-{# I can set the variable name. #}
-{# {% set modifier_class = 'su-lockup--option-t' %} #}
-{# I cannot get to the variable with the lockup.option 
-*  but it is listed in the dpm(variables) on the theme. #}
-{% set modifier_class = "su-lockup--option-" ~ lockup.option %}
