@@ -94,12 +94,15 @@
       {% if line3 is not empty %}
       <span class="su-lockup__line3" {{ region_attributes.line3 }}>{{ line3 }}</span>
       {% endif %}
+    {{ kint() }}
     </div>
     {% endif %}
   {% endif %}
 {% endblock %}
 
-
 {% extends "@minimally_branded_subtheme/components/lockup/lockup.html.twig" %}
+{# I can set the variable name. #}
 {# {% set modifier_class = 'su-lockup--option-t' %} #}
-{# {% set modifier_class = "su-lockup--option-" ~ lockup.option %} #}
+{# I cannot get to the variable with the lockup.option 
+*  but it is listed in the dpm(variables) on the theme. #}
+{% set modifier_class = "su-lockup--option-" ~ lockup.option %}
