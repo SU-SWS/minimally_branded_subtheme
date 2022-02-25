@@ -9,8 +9,7 @@
  */
 function minimally_branded_subtheme_preprocess_html(&$variables) {
   $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
-  dpm($variables);
-}
+ }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -20,11 +19,3 @@ function minimally_branded_subtheme_theme_suggestions_block_alter(array &$sugges
     $suggestions[] = 'block__stanford_basic_search';
   }
 }
-
-/**
-*/
-function minimally_branded_subtheme_preprocess_block__minimally_branded_subtheme_branding(&$variables) {
-    $VARIABLE_NAME = 'want the field value here';
-    $variables['content']['lockup'] = $VARIABLE_NAME ;
-}
- 
