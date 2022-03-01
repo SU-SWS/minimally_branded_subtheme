@@ -1,0 +1,13 @@
+{% extends "@jumpstart_ui/components/local-footer/local-footer.html.twig" %}
+
+{# Use custom logo for the footer. #}
+{% block block_lockup %}
+  {% block cell1 %}
+    <div class="su-lockup__wordmark-wrapper">
+      <span class="su-lockup__wordmark">REPLACE ME</span>
+      {% if line4 is not empty %}
+        <span class="su-lockup__line4" {{ region_attributes.line4 }}>{{ line4 }}</span>
+      {% endif %}
+    </div>
+  {% endblock %}
+{% endblock %}
