@@ -21,4 +21,3 @@ regions:
 components:
   namespaces:
     minimal: templates
-    decanter: dist/templates/decanter
