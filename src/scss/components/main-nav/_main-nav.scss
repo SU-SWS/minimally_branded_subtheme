@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@include grid-media-min('md') {
+@include grid-media-between('xs','md') {
   .su-nav-toggle {
     &:before {
       background-color: $su-color-digital-blue;
