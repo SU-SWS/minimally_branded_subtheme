@@ -1,2 +1,2 @@
 // Theme code.
-import './stanford_starter.behaviors.js';
+import './minimally_branded_subtheme.behaviors.js';
