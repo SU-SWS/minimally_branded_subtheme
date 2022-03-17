@@ -1,5 +1,7 @@
-# Stanford Starter Theme
+# Minimally Branded Theme
 
-8.x-X.X
+8.x-1.0
 --------------------------------------------------------------------------------
-_Release Date: 202X-XX-XX_
+_Release Date: 2022-03-17_
+
+- Initial Release
