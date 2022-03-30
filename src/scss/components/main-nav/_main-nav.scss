@@ -96,5 +96,39 @@
         }
       }
     }
+
+    .su-multi-menu__item--current {
+      >.su-multi-menu__link {
+        &:before {
+          background-color: $su-color-digital-blue;
+        }
+
+        &:active {
+          &:before {
+            background-color: $su-color-digital-blue;
+          }
+        }
+
+        &:focus,
+        &:hover,
+        &:active {
+          &::before {
+            background-color: $su-color-digital-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.su-multi-menu {
+  .su-multi-menu__menu {
+    .su-multi-menu__link {
+      &:active {
+        &::before {
+          background-color: $su-color-digital-blue;
+        }
+      }
+    }
   }
 }
