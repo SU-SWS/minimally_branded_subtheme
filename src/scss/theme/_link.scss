@@ -183,6 +183,16 @@
 
 // Publications
 .stanford-publications {
+  &.related {
+    .more-link {
+      a {
+        color: $su-color-white;
+      }
+    }
+  }
+}
+
+.stanford-publications {
   &.view {
     a {
       color: $su-color-digital-blue;
@@ -190,12 +200,12 @@
       &:hover,
       &:active,
       &:focus {
-    
+
         &:after {
           background-color: $su-color-digital-blue;
         }
       }
-   
+
       &:after {
         background-color: $su-color-digital-blue;
       }
