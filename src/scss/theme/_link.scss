@@ -173,8 +173,27 @@
 }
 
 // People Default Grid
-.stanford-people-grid .views-field-title a {
-  color: $su-color-digital-blue;
+.stanford-people-grid {
+  .views-field-title {
+    a {
+      color: $su-color-digital-blue;
+    }
+  }
+}
+
+.people-terms {
+  h4.field-content {
+    >a {
+      color: $su-color-digital-blue;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $su-color-black;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .ds-entity--stanford-person .stanford-person a {
@@ -182,16 +201,6 @@
 }
 
 // Publications
-.stanford-publications {
-  &.related {
-    .more-link {
-      a {
-        color: $su-color-white;
-      }
-    }
-  }
-}
-
 .stanford-publications {
   &.view {
     a {
@@ -221,6 +230,7 @@
       &:hover,
       &:active,
       &:focus {
+        background-color: $su-color-white;
         color: $su-color-black;
       }
     }
@@ -299,3 +309,17 @@
   }
 }
 
+.su-course-list-item {
+  .su-course-list__title {
+    a {
+      color: $su-color-digital-blue;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $su-color-black;
+        text-decoration: underline;
+      }
+    }
+  }
+}

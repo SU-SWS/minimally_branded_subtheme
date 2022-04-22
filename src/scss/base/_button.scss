@@ -41,6 +41,8 @@ button,
   }
 }
 
+
+
 a {
 
   // Style the icons with external links.
@@ -150,3 +152,28 @@ a {
 
   }
 }
+
+// More links on the bottom of nodes. 
+// Links styled as buttons.
+.stanford-news--cards>.more-link,
+.stanford-publications.related .more-link,
+.stanford-events .more-link,
+.su-events-details .su-event-cta {
+  a {
+    color: $su-color-white;
+    background-color: $su-color-black;
+    font-weight: $su-font-semi-bold;
+
+    &:hover,
+    &:focus {
+      background-color: $su-color-black-40;
+      color: $su-color-black;
+
+      &:after {
+        background-color: $su-color-black;
+      }
+    }
+  }
+}
+
+

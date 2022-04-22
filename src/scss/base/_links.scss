@@ -2,4 +2,11 @@
 
 .su-link, a {
   color: $su-color-bright-blue;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $su-color-black;
+    text-decoration: underline;
+  }
 }
