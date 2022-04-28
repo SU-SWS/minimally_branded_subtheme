@@ -41,10 +41,7 @@ button,
   }
 }
 
-
-
 a {
-
   // Style the icons with external links.
   &.su-link--external {
     
@@ -158,8 +155,11 @@ a {
 .stanford-news--cards>.more-link,
 .stanford-publications.related .more-link,
 .stanford-events .more-link,
-.su-events-details .su-event-cta {
-  a {
+.su-events-details .su-event-cta,
+.content .su-person-content .su-person-affiliations,
+.js-pager__items .pager__item  {
+  a,
+  .button {
     color: $su-color-white;
     background-color: $su-color-black;
     font-weight: $su-font-semi-bold;
