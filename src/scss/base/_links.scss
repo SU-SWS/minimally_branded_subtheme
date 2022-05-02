@@ -1,5 +1,236 @@
 @charset "UTF-8";
 
-.su-link, a {
+a.su-link,
+.su-link,
+a {
   color: $su-color-bright-blue;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $su-color-black;
+    text-decoration: underline;
+  }
+}
+
+.su-wysiwyg-text {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a {
+      color: $su-color-bright-blue;
+
+      &:after {
+        background-color: $su-color-bright-blue;
+      }
+
+      &.su-link--external {
+        &:after {
+          background-color: $su-color-bright-blue;
+        }
+      }
+    }
+  }
+}
+
+.su-event-schedule {
+  .su-event-schedule__headline {
+    a {
+      color: $su-color-bright-blue;
+
+      &:link,
+      &:visited {
+        color: $su-color-bright-blue;
+      }
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: $su-color-black;
+
+        &:after {
+          background-color: $su-color-black;
+        }
+      }
+      &:after {
+        background-color: $su-color-black;
+      }
+    }
+  }
+}
+
+.su-person-cta {
+  .su-person-cta__content {
+    .su-person-cta__name {
+      a {
+        color: $su-color-bright-blue;
+
+        &:link,
+        &:visited {
+          color: $su-color-bright-blue;
+        }
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: $su-color-black;
+
+          &:after {
+            background-color: $su-color-black;
+          }
+        }
+        &:after {
+          background-color: $su-color-black;
+        }
+      }
+    }
+  }
+}
+
+.su-events-type-schedule {
+  .node-stanford-event-su-event-type {
+    .su-event-type-bottom {
+      a {
+        color: $su-color-bright-blue;
+      }
+    }
+  }
+}
+
+.section-editorial-content {
+  .su-event-type {
+    a {
+      color: $su-color-bright-blue;
+    }
+  }
+}
+
+.publication {
+  .jumpstart-ui--one-column {
+    .node-stanford-publication-su-publication-topics {
+      .su-publication-topics {
+        li {
+          a {
+            color: $su-color-bright-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.su-news-topics {
+  a {
+    color: $su-color-bright-blue;
+  }
+}
+
+.su-events-type-schedule {
+  .node-stanford-event-su-event-type {
+    .su-event-type-bottom {
+      a {
+        color: $su-color-bright-blue;
+      }
+    }
+  }
+}
+
+.su-course-vertical-teaser {
+  .su-course-link {
+    a {
+      color: $su-color-bright-blue;
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: $su-color-black;
+
+        &:after {
+          background-color: $su-color-black;
+        }
+      }
+      &:after {
+        background-color: $su-color-black;
+      }
+    }
+  }
+}
+
+.stanford-publications-related {
+  .su-card {
+    .su-card__contents {
+      a {
+        color: $su-color-bright-blue;
+
+        &.su-button--secondary {
+          color: $su-color-bright-red;
+        }
+      }
+      h2 {
+        > a {
+          &:active,
+          &:focus,
+          &:hover {
+            color: $su-color-bright-blue;
+
+            &:after {
+              background-color: $su-color-bright-blue;
+            }
+          }
+          &:after {
+            background-color: $su-color-bright-blue;
+          }
+        }
+        >a:not(.su-link--external) {
+          &:active,
+          &:focus,
+          &:hover {
+            color: $su-color-bright-blue;
+
+            &:after {
+              background-color: $su-color-bright-blue;
+            }
+          }
+          &:after {
+            background-color: $su-color-bright-blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ptype-stanford-entity,
+.stanford-shared-tags {
+
+  .su-entity-item,
+  .ds-entity--stanford-publication {
+
+    .su-card__contents {
+      .su-publication-topics {
+        a {
+          color: $su-color-bright-blue;
+        }
+      }
+
+      >h2 {
+        a {
+          &:active,
+          &:focus,
+          &:hover {
+            color: $su-color-bright-blue;
+
+            &:after {
+              background-color: $su-color-bright-blue;
+            }
+          }
+          &:after {
+            background-color: $su-color-bright-blue;
+          }
+        }
+      }
+    }
+  }
 }
